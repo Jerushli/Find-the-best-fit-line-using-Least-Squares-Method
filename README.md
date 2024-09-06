@@ -18,54 +18,31 @@ To implement univariate Linear Regression to fit a straight line using least squ
 
 ## Program:
 ```
-/*
-Program to implement univariate Linear Regression to fit a straight line using least squares.
-Developed by: NAVEEN S
-RegisterNumber:  212222110030
-*/
-```
-```
+Name: Jerushlin Jose JB
+Reg: 212222240039
 
 import numpy as np
 import matplotlib.pyplot as plt
-
-X = np.array(eval(input()))
-Y = np.array(eval(input()))
-
-X_mean=np.mean(X)
-Y_mean=np.mean(Y)
-
-num = 0
-denom = 0
-
+X=np.array(eval(input()))
+Y=np.array(eval(input()))
+Xmean=np.mean(X)
+Ymean=np.mean(Y)
+num,den=0,0 # num = numerator, den = denomenator
 for i in range(len(X)):
-    num += (X[i]-X_mean)*(Y[i]-Y_mean)
-    denom += (X[i]-X_mean)**2
-
-m = num/denom
-
-b = Y_mean - m*X_mean
-print (m, b)
-
-
-Y_pred = m*X+b
-print (Y_pred)
-
-
-print("X values : ",X)
-print("Y values : ",Y)
-dots=[150]
-plt.figure(figsize=(10, 8))
-plt.scatter(X,Y,color='green',s=dots)
-plt.plot(X,Y_pred,color='red',linewidth=4)
-plt.xlabel("X-axis",fontweight='bold',fontsize=20)
-plt.ylabel("Y-axis",fontweight='bold',fontsize=20)
+  num+=(X[i]-Xmean)*(Y[i]-Ymean)
+  den+=(X[i]-Xmean)**2
+m=num/den
+c=Ymean-m*Xmean
+print(m,c)
+Y_pred=m*X+c
+print(Y_pred)
+plt.scatter(X,Y)
+plt.plot(X,Y_pred,color="red")
 plt.show()
 ```
-
 ## Output:
+![image](https://github.com/user-attachments/assets/fe1c7b6f-e812-4478-8833-66adff6e85fe)
 
-![262105073-b9cda621-c9a9-4f82-bc2d-61eeba02a478](https://github.com/Jerushli/Find-the-best-fit-line-using-Least-Squares-Method/assets/120041243/7ae74c5c-9254-489e-a7c8-f443589ff79f)
 
 
 ## Result:
